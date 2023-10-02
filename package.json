@@ -1,0 +1,18 @@
+{
+  "name": "llama-ls",
+  "module": "src/index.ts",
+  "type": "module",
+  "bin": {
+    "llama-ls": "./bin/index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
