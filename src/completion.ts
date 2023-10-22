@@ -4,7 +4,7 @@ import {
   CompletionItemKind,
   TextDocumentPositionParams,
   TextDocuments,
-} from "vscode-languageserver/node";
+} from "vscode-languageserver/node.js";
 
 export const handleCompletionFn =
   (documents: TextDocuments<TextDocument>) =>

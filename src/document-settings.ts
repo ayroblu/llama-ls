@@ -3,7 +3,7 @@ import {
   DidChangeConfigurationParams,
   TextDocumentChangeEvent,
 } from "vscode-languageserver";
-import { config } from "./config";
+import { config } from "./config.js";
 import { TextDocument } from "vscode-languageserver-textdocument";
 
 type Settings = {

@@ -2,16 +2,16 @@ import {
   createConnection,
   TextDocuments,
   ProposedFeatures,
-} from "vscode-languageserver/node";
+} from "vscode-languageserver/node.js";
 
 import { TextDocument } from "vscode-languageserver-textdocument";
-import { onInitialize, onInitializedFn } from "./config";
+import { onInitialize, onInitializedFn } from "./config.js";
 import {
   handleCloseDocument,
   handleDocumentSettingsChange,
-} from "./document-settings";
-import { validateTextDocumentFn } from "./validate";
-import { handleCompletionFn, handleCompletionResolve } from "./completion";
+} from "./document-settings.js";
+import { validateTextDocumentFn } from "./validate.js";
+import { handleCompletionFn, handleCompletionResolve } from "./completion.js";
 
 const connection = createConnection(ProposedFeatures.all);
 

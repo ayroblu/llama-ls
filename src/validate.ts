@@ -1,11 +1,11 @@
 import { TextDocument } from "vscode-languageserver-textdocument";
-import { getDocumentSettingsFn } from "./document-settings";
+import { getDocumentSettingsFn } from "./document-settings.js";
 import {
   Connection,
   Diagnostic,
   DiagnosticSeverity,
-} from "vscode-languageserver/node";
-import { config } from "./config";
+} from "vscode-languageserver/node.js";
+import { config } from "./config.js";
 
 export function validateTextDocumentFn(connection: Connection) {
   const getDocumentSettings = getDocumentSettingsFn(connection);
