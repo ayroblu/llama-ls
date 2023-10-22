@@ -35,10 +35,11 @@ export const getDocumentSettingsFn =
     }
     let result = documentSettings.get(resource);
     if (!result) {
-      result = connection.workspace.getConfiguration({
+      const config = connection.workspace.getConfiguration({
         scopeUri: resource,
         section: "llamals",
       });
+      result = { ...globalSettings, ...config };
       documentSettings.set(resource, result);
     }
     return result;

@@ -3,7 +3,7 @@
   "module": "src/index.ts",
   "type": "module",
   "bin": {
-    "llama-ls": "./bin/index.ts"
+    "llama-ls": "./bin.js"
   },
   "devDependencies": {
     "bun-types": "latest",
