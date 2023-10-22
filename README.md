@@ -6,10 +6,48 @@ To install dependencies:
 bun install
 ```
 
-To run:
+Though created with bun, this requires node.js
 
+To use:
+
+### Add to path
 ```bash
-bun run index.ts
+# adds llama-ls to your path
+npm link
 ```
 
-This project was created using `bun init` in bun v1.0.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+### Run llama.cpp
+
+```sh
+# run llama.cpp in another directory
+cd ~/ws/llama.cpp
+./server -m models/codellama-7b.Q5_K_M.gguf -c 5000
+```
+
+### Run lsp with neovim and lspconfig
+
+```lua
+-- ~/.vim/plugged/nvim-lspconfig/lua/lspconfig/server_configurations/llama_ls.lua
+local util = require 'lspconfig.util'
+
+return {
+  default_config = {
+    cmd = { 'llama-ls', '--stdio' },
+    -- cmd = { 'node', '/Users/blu/ws/vscode-extension-samples/lsp-sample/server/out/server.js', '--stdio' },
+    filetypes = { 'text', 'javascript', 'typescript' },
+    root_dir = util.find_git_ancestor,
+  },
+  docs = {
+    description = [[
+llama-ls is a basic codellama infill tool
+]]   ,
+  },
+}
+
+```
+
+Run setup with lspconfig
+
+```lua
+lspconfig.llama_ls.setup {}
+```
